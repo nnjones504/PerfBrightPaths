@@ -16,21 +16,14 @@ reader.question(
 	"Enter a password (10 chararcter minimum): ",
 	function (answer) {
 		// variables to determine if answer contains special chars and numbers
-		let specChar = /[\s~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?()\._]/g.test(answer);
+		let checkSpecChar = /\W/.test(answer);
 		let checkNums = /\d/.test(answer);
 
 		// checks length
 		if (answer.length >= 10) {
 			// checks for numbers
-			if (specChar === true && checkNums === true) {
-				console.log(`
-                              __   
-   ___________   ____ _____ _/  |_ 
-  / ___\_  __ \_/ __ \\__  \\   __\
- / /_/  >  | \/\  ___/ / __ \|  |  
- \___  /|__|    \___  >____  /__|  
-/_____/             \/     \/      
-`);
+			if (checkSpecChar === true && checkNums === true) {
+				console.log("Great password! :)");
 			} else if (checkNums === true) {
 				console.log(
 					"Good password. Try using some special characters too next time."
@@ -38,7 +31,7 @@ reader.question(
 			}
 
 			// checks for special chars
-			else if (specChar === true) {
+			else if (checkSpecChar === true) {
 				console.log("Good password. Try using some numbers too next time.");
 			}
 
