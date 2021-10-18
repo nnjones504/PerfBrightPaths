@@ -12,9 +12,7 @@ const reader = readline.createInterface({
 console.log("Welcome to the password validator tool!");
 
 // Prompt the user for a password to validate
-reader.question(
-	"Enter a password (10 chararcter minimum): ",
-	function (answer) {
+reader.question("Enter a password (10 chararcter minimum): ", function (answer) {
 		// variables to determine if answer contains special chars and numbers
 		let checkSpecChar = /\W/.test(answer);
 		let checkNums = /\d/.test(answer);
@@ -25,9 +23,7 @@ reader.question(
 			if (checkSpecChar === true && checkNums === true) {
 				console.log("Great password! :)");
 			} else if (checkNums === true) {
-				console.log(
-					"Good password. Try using some special characters too next time."
-				);
+				console.log("Good password. Try using some special characters too next time.");
 			}
 
 			// checks for special chars
@@ -37,18 +33,13 @@ reader.question(
 
 			// checks for special chars and nums
 			else {
-				console.log(
-					"Decent password. Try using some numbers and special characters next time"
-				);
+				console.log("Decent password. Try using some numbers and special characters next time");
 			}
 		} else {
 			// not long enough
-			console.log(
-				`Your password isn't long enough. You need at least ${
-					10 - answer.length
-				} more character(s).`
-			);
+			console.log(`Your password isn't long enough. You need at least ${10 - answer.length} more character(s).`);
 		}
 		reader.close();
-	}
-);
+  });
+
+
