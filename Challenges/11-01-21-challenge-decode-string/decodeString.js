@@ -7,7 +7,8 @@ const decode = (str) => {
 	let decoded = "";
 	
 	for (let i = 1; i < str.split("").length; i++){
-		decoded += alphabet[alphabet.indexOf(str[i]) + Number(str[0])]
+    // finds current letter in alphabet and shifts
+    decoded += alphabet[alphabet.indexOf(str[i]) + Number(str[0])]
 	}
 	return decoded
 };
