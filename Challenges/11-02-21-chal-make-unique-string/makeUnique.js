@@ -1,8 +1,5 @@
 // Write your solution below:
-const makeUnique = str => {
-  str = new Set(str);
-  return [...str].join("")
-}
+const makeUnique = str => [...new Set(str)].join("")
 
 console.log(makeUnique("helloworld"));
 
@@ -10,12 +7,10 @@ console.log(makeUnique("helloworld"));
 const makeUnique2 = (str) => {
 	str = str.split("");
 	let newStr = [];
-	let i = 0;
-	while (i < str.length) {
+	for (let i = 0; i < str.length; i++) {
 		if (!newStr.includes(str[i])) {
 			newStr.push(str[i]);
 		}
-    i++;
 	}
 	return newStr.join("");
 };
