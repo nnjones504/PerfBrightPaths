@@ -1,0 +1,16 @@
+body{
+  background-color: gray;
+}
+
+button{
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  font-size:24px;
+  margin: 0 0 0 100px;
+}
+button:hover{
+   background:white;
+   box-shadow:0px 0px 20px 10px darkseagreen;
+   color:#000;
+}
