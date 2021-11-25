@@ -10,7 +10,7 @@
     <br />
     <br />
     <h1>We can all use a pick me up. Share an inspirational Quote:</h1>
-    <form id="create-Form">
+    <form id="add-Form">
       <input type="text" id="quote" placeholder="Enter your quote here." />
       <button id="submitQuote">Submit</button>
     </form>
@@ -22,16 +22,19 @@
     </div>
 
     <h3>Typo? Let's fix that!</h3>
-    <form id="create-Form">
-      <input type="text" id="UpdateQuote" placeholder="Update " />
+    <form id="update-Form">
+      <input type="text" id="UpdateQuote" placeholder="Enter new quote." />
+      <select name="ID" id="idSelect"></select>
+      <br>
+      <label for="update">Update a quote. Pick its ID.</label>
 
-      <button id="submitQuote">Delete forever</button>
+      <button id="UpdateButton">Update</button>
     </form>
 
     <br />
     <br />
     <h3>Typos beyond repair? Let's delete it!</h3>
-    <form id="create-Form">
+    <form id="delete-Form">
       <input type="text" id="deleteQuote" placeholder="Delete " />
 
       <button id="submitQuote">Delete forever</button>
