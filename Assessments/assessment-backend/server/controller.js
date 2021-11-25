@@ -37,22 +37,18 @@ module.exports = {
   },
 
   updateQuote: (req, res) => {
-      let index = quotes.findIndex((elem) => elem.id === +req.params.id);
-      quotes[index].quote = req.body;
-      res.status(200).send(quotes);
-
-
+    let index = parseInt(req.params.id);
+    for (let i = 0; i < quotes.length; ++i) {
+      if (quotes[i].id === index) {
+        quotes[i].quote = req.body.update;
+      }
+    }
+    res.status(200).send(quotes);
   },
 
-  // updateMovie: (req, res) => {
-
-  //   if (req.body.type === "plus" && movies[index].rating < 5) {
-  //     movies[index].rating += 1;
-  //   } else if (req.body.type === "minus" && movies[index].rating > 1) {
-  //     movies[index].rating -= 1;
-  //   } else {
-  //     res.sendStatus(400);
-  //   }
-  //   res.status(200).send(movies);
-  // },
+  deleteQuote :(req, res) => {
+    let index = quotes.findIndex(elem => elem.id === +req.params.id);
+    quotes.splice(index, 1)
+    res.status(200).send(quotes);
+  }
 };

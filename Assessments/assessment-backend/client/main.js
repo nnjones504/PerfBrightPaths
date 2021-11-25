@@ -7,6 +7,7 @@ const fortuneButton = document.getElementById("fortuneButton");
 const submitQuoteButton = document.getElementById("submitQuote");
 const showQuotesButton = document.getElementById("showQuotesButton");
 const UpdateButton = document.getElementById("UpdateButton");
+const deleteButton = document.getElementById("deleteButton")
 
 const errorCallback = (error) => console.log(error.response.data);
 
@@ -56,16 +57,19 @@ const showQuotes = () => {
 
 const updateQuote = (id, update) => {
   update = document.getElementById("UpdateQuote").value;
-  id = document.getElementById("idSelect").value;
+  id = parseInt(document.getElementById("idSelect").textContent);
   console.log(update);
   console.log(id);
+  console.log(typeof id);
   axios
-    .put(`${baseURL}/${id}`, { update })
-    .then((response) => {
-      alert(`updated ${response.data.id} with ${response.data.update}`);
-    })
-
+    .put(`${baseURL}/quotes/${id}`, { update })
+    .then(showQuotes())
     .catch(errorCallback);
+};
+
+const deleteQuote = id => {
+  axios.delete(`${baseURL}/quotes/${id}`)
+  .then(showQuotes)
 };
 
 complimentButton.addEventListener("click", getCompliment);
@@ -73,8 +77,9 @@ fortuneButton.addEventListener("click", getFortune);
 submitQuoteButton.addEventListener("click", submitQuote);
 showQuotesButton.addEventListener("click", showQuotes);
 UpdateButton.addEventListener("click", updateQuote);
+deleteButton.addEventListener("click", deleteQuote)
 
-//showQuotes();
+
 
 // add options based on how many quotes given
 const addOptions = () => {
