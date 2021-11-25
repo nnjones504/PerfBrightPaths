@@ -62,9 +62,9 @@ const updateQuote = (id, update) => {
   axios
     .put(`${baseURL}/${id}`, { update })
     .then((response) => {
-      alert(`updated ${response.data.id} with ${response.data.update}`)
+      alert(`updated ${response.data.id} with ${response.data.update}`);
     })
-    
+
     .catch(errorCallback);
 };
 
