@@ -57,8 +57,7 @@ const showQuotes = () => {
 
 const updateQuote = (id, update) => {
   update = document.getElementById("UpdateQuote").value;
-  id = parseInt(document.getElementById("idSelect").textContent);
-  console.log(update);
+  id = parseInt(document.getElementById("idSelect").value);
   console.log(id);
   console.log(typeof id);
   axios
@@ -87,7 +86,7 @@ const addOptions = () => {
     for (let i = 0; i < response.data.length; i++) {
       let option = document.createElement("option");
       option.text = response.data[i].id;
-      option.value = response.data[i].quote;
+      option.value = response.data[i].id;
       select = document.getElementById("idSelect");
       select.appendChild(option);
     }
