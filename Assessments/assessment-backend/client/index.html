@@ -6,7 +6,6 @@
   <body class="container">
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a fortune</button>
-
     <br />
     <br />
     <h1>We can all use a pick me up. Share an inspirational Quote:</h1>
@@ -14,34 +13,26 @@
       <input type="text" id="quote" placeholder="Enter your quote here." />
       <button id="submitQuote">Submit</button>
     </form>
-
     <br />
     <div id="printQuotes">
       <h1 id="quoteHeader">Current Quotes:</h1>
       <button type="button" id="showQuotesButton">Show Quotes</button>
     </div>
-
     <h3>Typo? Let's fix that!</h3>
     <form id="update-Form">
       <input type="text" id="UpdateQuote" placeholder="Enter new quote." />
       <select name="ID" id="idSelect"></select>
       <br>
       <label for="update">Update a quote. Pick its ID.</label>
-
       <button type="button" id="UpdateButton">Update</button>
     </form>
-
     <br />
     <br />
     <h3>Typos beyond repair? Let's delete it!</h3>
     <form id="delete-Form">
       <input type="text" id="deleteQuote" placeholder="Delete " />
-
       <button id="deleteButton">Delete forever</button>
     </form>
-
-    
-
     <!--Import axios and main.js-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
