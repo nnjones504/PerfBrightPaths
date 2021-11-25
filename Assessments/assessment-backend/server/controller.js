@@ -1,9 +1,11 @@
 const database = require("./db.json") 
+let quotes = database.quotes;
+let fortunes = database.fortunes;
+let compliments = database.compliments;
+
 
 module.exports = {
-  getCompliment: (req, res) => {
-    const compliments = database.compliments;
-    
+  getCompliment: (req, res) => {    
     // choose random compliment
     let randomIndex = Math.floor(Math.random() * compliments.length);
     let randomCompliment = compliments[randomIndex];
@@ -12,7 +14,6 @@ module.exports = {
   },
 
   getFortune: (req, res) => {
-    const fortunes = database.fortunes;
     // get random fortune
     let randomIndex = Math.floor(Math.random() * fortunes.length);
     let fortune = fortunes[randomIndex];
@@ -21,16 +22,14 @@ module.exports = {
   },
 
   addQuote: (req, res) => {
-    let quotes = database.quotes;
-    // need to change test quote
     let userQuote = req.body.testQuote;
-    // req.body.testQuote)
-    let quote = {
-      id: quotes.length + 1,
-      text: userQuote,
-    };
+    let quote = `id: ${quotes.length +1} Quote: ${userQuote}`;
     
     quotes.push(quote);
     res.status(200).send(quotes);
   },
+
+  showQuotes: (req, res) => {
+    res.status(200).send(quotes);
+  }
 };

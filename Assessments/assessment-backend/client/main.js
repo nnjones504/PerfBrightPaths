@@ -5,6 +5,7 @@ const baseURL = `http://localhost:4000/api`;
 const complimentButton = document.getElementById("complimentButton");
 const fortuneButton = document.getElementById("fortuneButton");
 const submitQuoteButton = document.getElementById("submitQuote");
+const showQuotesButton = document.getElementById("showQuotesButton");
 
 const errorCallback = (error) => console.log(error.response.data);
 
@@ -38,7 +39,25 @@ const submitQuote = () => {
     .catch(errorCallback);
 };
 
+const showQuotes = () => {
+  axios.get(`${baseURL}/quotes`).then((response) => {
+    for (let i = 0; i < response.data.length; i++) {
+        document.getElementById("hasData");
+        paragraph = document.createElement("p");
+        let text = document.createTextNode(
+          `${JSON.stringify(response.data[i])}`
+        );
+        //document.getElementById("currentQuotes").value = text;
+        paragraph.append(text);
+        paragraph.append(document.createElement("br"));
+        document.getElementById("printQuotes").appendChild(paragraph);
+      }
+    })
+  }
 
 complimentButton.addEventListener("click", getCompliment);
-fortuneButton.addEventListener('click', getFortune);
-submitQuoteButton.addEventListener('click', submitQuote);
+fortuneButton.addEventListener("click", getFortune);
+submitQuoteButton.addEventListener("click", submitQuote);
+showQuotesButton.addEventListener("click", showQuotes);
+
+//showQuotes();

@@ -7,22 +7,40 @@
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a fortune</button>
 
-    <h2></h2>
+    <br />
+    <br />
+    <h1>We can all use a pick me up. Share an inspirational Quote:</h1>
     <form id="create-Form">
-      <input type="text" id="quote" placeholder="Share your wisdom." />
+      <input type="text" id="quote" placeholder="Enter your quote here." />
       <button id="submitQuote">Submit</button>
     </form>
 
-    <h2></h2>
+    <br />
+    <div id="printQuotes">
+      <h1 id="quoteHeader">Current Quotes:</h1>
+      <button type="button" id="showQuotesButton">Show Quotes</button>
+    </div>
+
+    <h3>Typo? Let's fix that!</h3>
     <form id="create-Form">
-      <input type="text" id="deleteQuote" placeholder="Delete " />
-      
+      <input type="text" id="UpdateQuote" placeholder="Update " />
+
       <button id="submitQuote">Delete forever</button>
     </form>
 
-    <!--Import axios and main.js-->
-    <script src="main.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <br />
+    <br />
+    <h3>Typos beyond repair? Let's delete it!</h3>
+    <form id="create-Form">
+      <input type="text" id="deleteQuote" placeholder="Delete " />
 
+      <button id="submitQuote">Delete forever</button>
+    </form>
+
+    
+
+    <!--Import axios and main.js-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
