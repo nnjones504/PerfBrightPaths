@@ -1,4 +1,4 @@
-//addToZero runtime: O(n^2)
+//addToZero runtime & space complexity: O(n^2)
 const addToZero = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     for (let x = 0; x < arr.length; x++) {
@@ -10,17 +10,17 @@ const addToZero = (arr) => {
   return false;
 };
 
-//hasUniqueChars runtime: O(n)
+//hasUniqueChars runtime & space complexity: O(n)
 const hasUniqueChars = (str) => str.length === new Set(str).size;
 
-//isPangram runtime: O(n)
+//isPangram runtime & space complexity: O(n)
 const isPangram = (str) => {
   // remove duplicates and all spaces, numbers and special chars from string
   let sentence = new Set(str.toLowerCase().replace(/[^a-z]/g, ""));
   return sentence.size === 26 ? true : false;
 };
 
-//findLongestWord runtime: O(n)
+//findLongestWord runtime & space complexity: O(n)
 const findLongestWord = (arr) => {
   let longest = arr[0];
   arr.forEach((element) => {
