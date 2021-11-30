@@ -1,0 +1,27 @@
+Results for the tinyArray
+insert 18.75 μs
+append 53.708 μs
+
+Results for the smallArray
+insert 21.667 μs
+append 55.542 μs
+
+Results for the mediumArray
+insert 144.875 μs
+append 104.041 μs
+
+Results for the largeArray
+insert 6.539125 ms
+append 430.375 μs
+
+Results for the extraLargeArray
+insert 771.470209 ms
+append 6.861417 ms
+
+Read over the results, and write a paragraph that explains the pattern you see. How does each function “scale”? Which of the two functions scales better? How can you tell?
+    Using the append method is a lot faster than the insert method. As the arrays get larger in size, the insert method becomes less scalable. The append method scales better because it has a better time efficiency overall especially dealing with bigger arrays.
+
+
+For extra credit, do some review / research on why the slower function is so slow, and summarize the reasoning for this.
+    The doubleInsert method is slower because it uses the unshift method. The unshift method method adds one or more elements to the beginning of an array and returns the new length of the array. The append method inserts an object at the end of a list. Since the doubleAppend method uses the append method, the computer does not have to go through the entire array, like the doubleInsert method, in order to add an object to the end of the list.
+
