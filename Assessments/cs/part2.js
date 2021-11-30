@@ -10,10 +10,10 @@ const addToZero = (arr) => {
   return false;
 };
 
-//hasUniqueChars runtime: O(1)
+//hasUniqueChars runtime: O(n)
 const hasUniqueChars = (str) => str.length === new Set(str).size;
 
-//isPangram runtime: O(1)
+//isPangram runtime: O(n)
 const isPangram = (str) => {
   // remove duplicates and all spaces, numbers and special chars from string
   let sentence = new Set(str.toLowerCase().replace(/[^a-z]/g, ""));
